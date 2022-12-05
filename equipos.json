@@ -1,0 +1,87 @@
+[
+    {
+        "team_name": "Las Agilas",
+        "team_logo":"/escudos/las_agilas.png",
+        "team_points":0,
+        "matches_won":0,
+        "matches_lost":0,
+        "matches_tied":0,
+        "players": 
+            {
+                "player1":"Santiago Hernández",
+                "player2":"Mateo García",
+                "player3":"Sebastian Martínez",
+                "player4":"Leonardo López",
+                "player5":"Matias González"
+            }
+        
+    },
+    {
+        "team_name": "Los Tigres",
+        "team_logo":"/escudos/los_tigres.png",
+        "team_points":0,
+        "matches_won":0,
+        "matches_lost":0,
+        "matches_tied":0,
+        "players": 
+            {
+                "player1":"Emiliano Pérez",
+                "player2":"Diego Rodríguez",
+                "player3":"Miguel Ángel Ramírez",
+                "player4":"Daniel Sánchez",
+                "player5":"Alexander Cruz"
+            }
+        
+    },
+    {
+        "team_name": "Los Leones",
+        "team_logo":"/escudos/los_leones.png",
+        "team_points":0,
+        "matches_won":0,
+        "matches_lost":0,
+        "matches_tied":0,
+        "players": 
+            {
+                "player1":"Alejandro Mendez",
+                "player2":"Arnulfo Carrera",
+                "player3":"Octaviano López",
+                "player4":"Vicente Cetino",
+                "player5":"Adolfo Aliñado"
+            }
+        
+    },
+    {
+        "team_name": "Las Panteras",
+        "team_logo":"/escudos/las_panteras.png",
+        "team_points":0,
+        "matches_won":0,
+        "matches_lost":0,
+        "matches_tied":0,
+        "players": 
+            {
+                "player1":"Edgar Noriega",
+                "player2":"Mario Pirír",
+                "player3":"Santos Revolorio",
+                "player4":"Osman Muchuch",
+                "player5":"Leonel Soto"
+            }
+        
+    },
+    {
+        "team_name": "Los Caballos",
+        "team_logo":"/escudos/los_caballos.png",
+        "team_points":0,
+        "matches_won":0,
+        "matches_lost":0,
+        "matches_tied":0,
+        "players": 
+            {
+                "player1":"Augusto Villatoro",
+                "player2":"Leónidas Camey",
+                "player3":"Angelino López",
+                "player4":"Carlos Sánchez",
+                "player5":"César Flores"
+            }
+        
+    }
+]
