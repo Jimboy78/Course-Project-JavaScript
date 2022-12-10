@@ -13,6 +13,7 @@ btnTable.addEventListener("click",()=>{
 
 function showTeam (){
     conteinerTable.innerHTML=``
+    conteinerTeam.innerHTML=``
     fetch('/equipos.json')
     .then((res)=>res.json())
     .then((data) => {
@@ -44,46 +45,75 @@ function showTeam (){
 
 function showTable (){
     conteinerTeam.innerHTML=``
+    conteinerTable.innerHTML=``
     fetch('/equipos.json')
     .then((res)=>res.json())
     .then((data) => {
-            console.log(data)
-            const tableDiv = document.createElement("div")
-            tableDiv.className ="row justify-content-around" 
-            const table   = document.createElement("table");
-            const tblBody = document.createElement("tbody");
+        const tableDiv = document.createElement("div")
+        tableDiv.className ="row" 
+        const table   = document.createElement("table");
+        const tblBody = document.createElement("tbody");
+        tblBody.className = "text-center"
 
-            for (let i = 0; i< data.length; i++) {
-                const row = document.createElement("tr");
+            // Creo la fila donde estan los titulos
+        const datesNames = document.createElement("tr");
+        tblBody.appendChild(datesNames);
 
-                for (let j = 0; j < data.length; j++) {
-                    const cell = document.createElement("td");
+            // Creo cada columna donde van a estar los titulos de las celdas
+        const nameCell = document.createElement("td");
+        const wonCell = document.createElement("td");
+        const lostCell = document.createElement("td");
+        const tiedCell = document.createElement("td");
+        const pointsCell = document.createElement("td");
 
-                    if (j == 0 ){
-                        cell.innerHTML = `${data[i].team_name}`
-                    }if(j > 0 ){
-                        cell.innerHTML = `fila ${i} columna ${j}`
-                    }
-                    
-                    row.appendChild(cell);
-                }
+            // Creo los titulos de las celdas
+        nameCell.innerHTML = `<strong>Equipo</strong>`
+        wonCell.innerHTML = `<strong>Partidos ganados</strong>`
+        lostCell.innerHTML = `<strong>Partidos perdidos</strong>`
+        tiedCell.innerHTML = `<strong>Partidos empatados</strong>`
+        pointsCell.innerHTML = `<strong>Puntos</strong>`
 
-                tblBody.appendChild(row);
-            }
-            console.log(tblBody)
-            for (let j = 0; j < data.length; j++) {
-                const row = document.createElement("tr");
-                const cell = document.createElement("td");
-                cell.innerHTML = ``
+            // Inserto los titulos en la fila 
+        datesNames.appendChild(nameCell);
+        datesNames.appendChild(wonCell);
+        datesNames.appendChild(lostCell);
+        datesNames.appendChild(tiedCell);
+        datesNames.appendChild(pointsCell);
 
+            // Recorro todo el json
+        data.forEach(element => {
 
-                row.insertBefore(cell);
-            }
+                // Creo una fila por cada equipo en el json
+            const dates = document.createElement("tr");
+
+                // Creo cada celda donde van a estar las stats de los equipos
+            const teamNameCell = document.createElement("td");
+            const teamPointsCell = document.createElement("td");
+            const matchesWonCell = document.createElement("td");
+            const matchesLostCell = document.createElement("td");
+            const matchesTiedCell = document.createElement("td");
+
+                // Escribo las stats en las celdas
+            teamNameCell.innerHTML = `${element.team_name}`
+            teamPointsCell.innerHTML = `${element.team_points}`
+            matchesWonCell.innerHTML = `${element.matches_won}`
+            matchesLostCell.innerHTML = `${element.matches_lost}`
+            matchesTiedCell.innerHTML = `${element.matches_tied}`
+
+                // Inserto las celdas a la fila
+            dates.appendChild(teamNameCell);
+            dates.appendChild(matchesWonCell);
+            dates.appendChild(matchesLostCell);
+            dates.appendChild(matchesTiedCell);
+            dates.appendChild(teamPointsCell);
+
+                // Inserto los datos en la tabla y la tabla en el div
+            tblBody.appendChild(dates);
             table.appendChild(tblBody);
-            table.setAttribute("border", "2");
             tableDiv.appendChild(table)
-            conteinerTable.appendChild(tableDiv);
-
+        });
+        table.setAttribute("border", "2");
+        conteinerTable.appendChild(tableDiv);
     })
     
 }
